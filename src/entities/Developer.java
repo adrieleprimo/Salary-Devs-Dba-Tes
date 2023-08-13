@@ -12,9 +12,9 @@ public class Developer extends Employees {
 
 	public Double totalDEV() {
 		if (salary > 3000) {
-			return salary = salary * 0.1 + salary;
+			return salary * 0.1 + salary;
 		} else {
-			return salary = salary * 0.2 + salary;
+			return  salary * 0.2 + salary;
 		}
 	}
 

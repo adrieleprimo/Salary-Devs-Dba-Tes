@@ -14,9 +14,9 @@ public class Tester extends Employees {
 
 	public Double totalTes() {
 		if (salary > 3000) {
-			return salary = salary * 0.15 + salary;
+			return salary * 0.15 + salary;
 		} else {
-			return salary = salary * 0.2 + salary;
+			return salary * 0.2 + salary;
 		}
 	}
 

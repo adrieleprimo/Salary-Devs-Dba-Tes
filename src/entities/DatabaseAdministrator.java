@@ -14,9 +14,9 @@ public class DatabaseAdministrator extends Employees {
 
 	public Double totalDBA() {
 		if (salary > 3000) {
-			return salary = salary * 0.15 + salary;
+			return salary * 0.15 + salary;
 		} else {
-			return salary = salary * 0.20 + salary;
+			return  salary * 0.20 + salary;
 		}
 	}
 
