@@ -1,23 +1,31 @@
 package entities;
 
+import model.entities.JobPosition;
+
 public class Employees {
-	protected String name;
-	protected Double salary;
+	
+	private String name;
+	
+	private JobPosition job;
+	
+	private double salary;
 
-	public Employees() {
-
-	}
-
-	public Employees(String name, Double salary) {
+	public Employees(String name, JobPosition job, double salary) {
 		this.name = name;
+		this.job = job;	
 		this.salary = salary;
 	}
-
+	
 	public String getName() {
 		return name;
 	}
-
-	public Double getSalary() {
+	
+	public double getSalary() {
 		return salary;
 	}
+	
+	@Override
+	public String toString() {
+		return getName() + ", salary: " +  String.format("%.2f", job.total(getSalary())) + "\n" ;
+	}	
 }

@@ -1,24 +1,14 @@
 package entities;
 
-public class Developer extends Employees {
+import model.entities.JobPosition;
 
-	public Developer() {
-		super();
-	}
-
-	public Developer(String name, Double salary) {
-		super(name, salary);
-	}
-
-	public Double totalDEV() {
+public class Developer implements JobPosition {
+	
+	public double total(double salary) {
 		if (salary > 3000) {
-			return salary * 0.1 + salary;
+			return salary + (0.1 * salary);
 		} else {
-			return  salary * 0.2 + salary;
+			return  salary + (0.2 * salary);
 		}
-	}
-
-	public String toString() {
-		return getName() + ", job position:Developer, salary: $ " + String.format("%.2f", totalDEV()) + "\n";
 	}
 }

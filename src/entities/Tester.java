@@ -1,27 +1,14 @@
 package entities;
 
-public class Tester extends Employees {
+import model.entities.JobPosition;
 
-	private Double salary;
+public class Tester implements JobPosition {
 
-	public Tester() {
-		super();
-	}
-
-	public Tester(String name, Double salary) {
-		super(name, salary);
-	}
-
-	public Double totalTes() {
+	public double total(double salary) {
 		if (salary > 3000) {
-			return salary * 0.15 + salary;
+			return salary +( 0.15 *  salary);
 		} else {
-			return salary * 0.2 + salary;
+			return salary + (0.2 * salary);
 		}
-	}
-
-	@Override
-	public String toString() {
-		return getName() + ", job position: Tester, salary: $ " + String.format("%.2f", totalTes()) + "\n";
 	}
 }

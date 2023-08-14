@@ -1,28 +1,14 @@
 package entities;
 
-public class DatabaseAdministrator extends Employees {
+import model.entities.JobPosition;
 
-	private Double salary;
+public class DatabaseAdministrator implements JobPosition {
 
-	public DatabaseAdministrator() {
-
-	}
-
-	public DatabaseAdministrator(String name, Double salary) {
-		super(name, salary);
-	}
-
-	public Double totalDBA() {
+	public double total(double salary) {
 		if (salary > 3000) {
-			return salary * 0.15 + salary;
+			return salary + (0.15 * salary);
 		} else {
-			return  salary * 0.20 + salary;
+			return salary + (0.20 * salary);
 		}
-	}
-
-	@Override
-	public String toString() {
-		return getName() + ", job position: DatabaseAdministrator, salary: $ " + String.format("%.2f", totalDBA())
-				+ "\n";
-	}
+	}	
 }

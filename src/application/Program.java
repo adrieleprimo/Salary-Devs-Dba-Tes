@@ -16,7 +16,7 @@ public class Program {
 	public static void main(String[] args) {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
-		List<Employees> list = new ArrayList<>();
+		List <Employees> list = new ArrayList<>();
 		try {
 			System.out.print("Enter number of employees: ");
 			Integer N = sc.nextInt();
@@ -30,27 +30,35 @@ public class Program {
 				String name = sc.nextLine();
 				if (answer == 'd') {
 					System.out.print("Salary: ");
-					Double salaryEmployee = sc.nextDouble();
-					list.add(new Developer(name, salaryEmployee));
+					double salaryEmployee = sc.nextDouble();
+					list.add(new Employees (name, new Developer(), salaryEmployee));
+					
+				
 				} else if (answer == 'a') {
 					System.out.print("Salary: ");
-					Double salaryEmployee = sc.nextDouble();
-					list.add(new DatabaseAdministrator(name, salaryEmployee));
+					double salaryEmployee = sc.nextDouble();
+					list.add(new Employees (name, new DatabaseAdministrator(), salaryEmployee));
+				
 				} else {
 					System.out.print("Salary: ");
-					Double salaryEmployee = sc.nextDouble();
-					list.add(new Tester(name, salaryEmployee));
-				}
+					double salaryEmployee = sc.nextDouble();
+					list.add( new Employees (name, new Tester(), salaryEmployee));
+				}	
 			}
+			
+			System.out.println();
+			System.out.println("Employees: ");
+			for(Employees emp: list ) {
+				System.out.println(emp);
+			}
+			
 		} catch (IllegalFormatException e) {
 			System.out.println(e.getMessage());
 		} catch (RuntimeException e) {
 			System.out.println(e.getMessage());
 		}
 		System.out.println();
-		for (Employees e : list) {
-			System.out.println(e);
-		}
+	
 		sc.close();
 	}
 }
